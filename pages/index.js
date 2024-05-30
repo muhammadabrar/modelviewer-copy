@@ -95,9 +95,7 @@ if (!Iscopy) {
           <div className="left_box">
             <ModelForIphone />
             
-              <div className="icon">
-                <p className="logoTEXT">LOGO</p>
-              </div>
+              
            
           </div>
 
