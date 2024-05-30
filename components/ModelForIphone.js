@@ -20,7 +20,8 @@ const Model = () => {
       src={"/Battery2.glb"}
       shadow-intensity="1"
       touch-action="pan-y"
-      ar-modes="web-xr quick-look"
+      // ar-modes="webxr "
+      // ar-modes=" quick-look"
       camera-controls
       auto-rotate
       ar
