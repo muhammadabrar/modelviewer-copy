@@ -15,9 +15,8 @@ export default function Home(props) {
   const printRef = useRef();
   const [hostName, setHostName] = useState("");
   const [isIphone, setisIphone] = useState(false);
-  const [IsIphone, setIsIphone] = useState(false);
-  const [Iscopy, setIscopy] = useState(false);
-
+  const [loading, setLoading] = useState(true);
+  const [Iscopy, setIscopy] = useState(true);
 
 
    async function checkARCoreSupport() {
@@ -27,13 +26,18 @@ export default function Home(props) {
   
     try {
       const isSupported = await navigator.xr.isSessionSupported('immersive-ar');
+      setLoading(false)
       return isSupported;
+
     } catch (error) {
+      setLoading(false)
+
       console.error('Error checking ARCore support:', error);
       return false;
     }
   }
   useEffect(() => {
+    setIscopy(checkARCoreSupport())
     if (window) {
       setHostName(window.location.host);
     }
@@ -41,7 +45,13 @@ export default function Home(props) {
     
   }, []);
 
-if (checkARCoreSupport()) {
+  if (loading) {
+    return <>
+    Loading...
+  </>;
+  }
+
+if (!Iscopy) {
   return <>
   <Result
     status="404"
@@ -83,8 +93,7 @@ if (checkARCoreSupport()) {
        
         <div className="app_container">
           <div className="left_box">
-            {!IsIphone? <Model data={props.res.data} /> :
-            <ModelForIphone data={props.res.data} />}
+            <ModelForIphone />
             
               <div className="icon">
                 <p className="logoTEXT">LOGO</p>
