@@ -1,0 +1,27 @@
+.joinUsPopUp{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #0000007f;
+      display: grid;
+      place-items: center;
+      z-index: 999;
+
+}
+.wrap{
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      z-index: 999;
+
+
+}
+.Actions{
+      margin-top: 2rem;
+      justify-content: flex-end;
+      display: flex;
+      gap: 1rem;
+      z-index: 999;
+}

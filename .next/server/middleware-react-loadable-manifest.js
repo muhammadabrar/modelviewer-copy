@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST={"index.js -> ../components/Model":{"id":"index.js -> ../components/Model","files":["static/chunks/components_Model_js.js"]},"index.js -> ../components/ModelForIphone":{"id":"index.js -> ../components/ModelForIphone","files":["static/chunks/components_ModelForIphone_js.js"]}}
